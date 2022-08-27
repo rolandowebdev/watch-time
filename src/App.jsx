@@ -1,7 +1,9 @@
+import { Navbar } from './components';
+
 function App() {
   return (
-    <div>
-      <h1>Watch Time</h1>
+    <div className="justify-center max-w-2xl min-h-screen py-6 mx-auto ">
+      <Navbar />
     </div>
   );
 }

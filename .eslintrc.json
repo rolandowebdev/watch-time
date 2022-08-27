@@ -21,6 +21,8 @@
   "rules": {
     "react/react-in-jsx-scope": "off",
     "global-require": "off",
-    "import/no-extraneous-dependencies": "off"
+    "import/no-extraneous-dependencies": "off",
+    "react/button-has-type": "off",
+    "import/prefer-default-export": "off"
   }
 }
