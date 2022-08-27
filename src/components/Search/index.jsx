@@ -1,13 +1,11 @@
-import React from 'react';
-
 function Search() {
   return (
     <div className="form-control">
       <div className="input-group">
         <input
           type="text"
-          placeholder="Search…"
-          className="min-w-full input input-bordered bg-slate-800"
+          placeholder="Search Movie…"
+          className="input input-bordered bg-slate-800"
         />
         <button className="btn btn-square border-slate-700 bg-slate-800">
           <svg
