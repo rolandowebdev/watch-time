@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Card, Navbar } from './components';
+import { Card, Navbar, Container } from '../components';
 
-function App() {
+function Movie() {
   const [movies, setMovies] = useState([]);
 
   const url = `${process.env.REACT_APP_BASE_URL}/popular?api_key=${process.env.REACT_APP_API_KEY}`;
@@ -17,13 +17,13 @@ function App() {
   }, []);
 
   return (
-    <div className="justify-center min-h-screen px-4 py-6 mx-auto lg:px-12">
+    <Container>
       <Navbar />
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
         <Card movies={movies} />
       </div>
-    </div>
+    </Container>
   );
 }
 
-export default App;
+export default Movie;

@@ -5,11 +5,11 @@ function Card({ movies }) {
         <div
           key={movie.title}
           className="shadow-xl card bg-base-100 image-full">
-          <figure className="">
+          <figure>
             <img
-              className=""
+              className="w-full"
               alt={movie.title}
-              src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+              src={`${process.env.REACT_APP_IMAGE_URL}/${movie.poster_path}`}
             />
           </figure>
           <div className="card-body">
@@ -18,7 +18,9 @@ function Card({ movies }) {
               {movie.overview}
             </p>
             <div className="justify-end card-actions">
-              <button className="btn btn-primary">Detail</button>
+              <a className="btn btn-primary" href={`/movie/${movie.id}`}>
+                Detail
+              </a>
             </div>
           </div>
         </div>
