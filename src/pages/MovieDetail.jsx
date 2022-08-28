@@ -7,7 +7,7 @@ function MovieDetail() {
   const [genres, setGenres] = useState([]);
   const { id } = useParams();
 
-  const url = `${process.env.REACT_APP_BASE_URL}/${id}?api_key=${process.env.REACT_APP_API_KEY}`;
+  const url = `${process.env.REACT_APP_BASE_URL}/movie/${id}?api_key=${process.env.REACT_APP_API_KEY}`;
 
   const getMovieDetail = async () => {
     const res = await fetch(url);

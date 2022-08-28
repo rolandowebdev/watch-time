@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 function Card({ movies }) {
   return (
     <>
@@ -18,9 +20,9 @@ function Card({ movies }) {
               {movie.overview}
             </p>
             <div className="justify-end card-actions">
-              <a className="btn btn-primary" href={`/movie/${movie.id}`}>
+              <Link className="btn btn-primary" to={`/movie/${movie.id}`}>
                 Detail
-              </a>
+              </Link>
             </div>
           </div>
         </div>
