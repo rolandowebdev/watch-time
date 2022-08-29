@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 function Star({ id }) {
-  const [rating, setRating] = useState(0);
+  const [rating, setRating] = useState(null);
   const [hover, setHover] = useState(0);
 
   const postRating = `${process.env.REACT_APP_BASE_URL}/movie/${id}/rating?api_key=${process.env.REACT_APP_API_KEY}&guest_session_id=${process.env.REACT_APP_GUEST_SESSION_ID}`;
@@ -40,8 +40,8 @@ function Star({ id }) {
   };
 
   useEffect(() => {
-    if (rating > 0.5) postData();
-  }, []);
+    if (rating > 0) postData();
+  }, [rating]);
 
   return (
     <div className="mt-4">
@@ -70,7 +70,7 @@ function Star({ id }) {
         <h1>Your Rating : {localStorage.getItem(id)}</h1>
       </div>
       <button
-        className="bg-gray-800 px-3 flex items-center justify-center py-0 mt-1 rounded-sm text-md pt-1"
+        className="flex items-center justify-center px-3 py-0 pt-1 mt-1 bg-gray-800 rounded-sm text-md"
         onClick={handleDelete}
         type="button">
         Reset Rating

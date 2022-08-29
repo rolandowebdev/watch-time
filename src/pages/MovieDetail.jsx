@@ -21,9 +21,9 @@ function MovieDetail() {
 
   useEffect(() => {
     getMovieDetail();
-  }, []);
+  }, [id]);
 
-  if (loading) return <Container>Loading</Container>;
+  if (loading) return <Container>Loading...</Container>;
 
   return (
     <Container>
