@@ -27,8 +27,8 @@ function MovieDetail() {
 
   return (
     <Container>
-      <div className="h-[400px] flex gap-8">
-        <div className="card w-[342px] bg-base-100 shadow-xl flex-2">
+      <div className="flex flex-col gap-8 md:flex-row">
+        <div className="card md:w-[342px] w-full bg-base-100 shadow-xl flex-2">
           <img
             className="w-full"
             src={`${process.env.REACT_APP_IMAGE_URL}/${movieDetail.poster_path}`}
