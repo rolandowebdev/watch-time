@@ -10,9 +10,9 @@ https://developers.themoviedb.org/3/getting-started/introduction
 
 You can generate GUEST SESSION ID here :
 
-And if you done for generate API KEY & GUEST SESSION ID, you can create .env file then paste your API KEY like .env-example in .env file.
-
 https://developers.themoviedb.org/3/authentication/create-guest-session
+
+And if you done for generate API KEY & GUEST SESSION ID, you can create .env file then paste your API KEY like .env-example in .env file.
 
 ## After that you can run this script 👇
 
