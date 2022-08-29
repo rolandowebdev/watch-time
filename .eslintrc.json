@@ -25,6 +25,8 @@
     "react/button-has-type": "off",
     "import/prefer-default-export": "off",
     "react/prop-types": "off",
-    "no-console": "off"
+    "no-console": "off",
+    "react/no-array-index-key": "off",
+    "no-param-reassign": "off"
   }
 }
