@@ -11,7 +11,7 @@ function Search() {
     if (query !== '') {
       const res = await fetch(url);
       const data = await res.json();
-      setMenus(data.results.splice(0, 8));
+      setMenus(data.results.splice(0, 4));
     } else {
       setMenus([]);
     }
