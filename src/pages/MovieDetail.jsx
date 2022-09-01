@@ -5,33 +5,35 @@ import { Container, Star } from '../components';
 function MovieDetail() {
   const [movieDetail, setMovieDetail] = useState({});
   const [genres, setGenres] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [image, setImage] = useState('');
+  // const [loading, setLoading] = useState(false);
   const { id } = useParams();
 
   const url = `${process.env.REACT_APP_BASE_URL}/movie/${id}?api_key=${process.env.REACT_APP_API_KEY}`;
 
   const getMovieDetail = async () => {
-    setLoading(true);
+    // setLoading(true);
     const res = await fetch(url);
     const data = await res.json();
-    setGenres(data.genres);
     setMovieDetail(data);
-    setLoading(false);
+    setGenres(data.genres);
+    setImage(data.backdrop_path ? data.backdrop_path : data.poster_path);
+    // setLoading(false);
   };
 
   useEffect(() => {
     getMovieDetail();
-  }, [id]);
+  }, [id, image]);
 
-  if (loading) return <Container>Loading...</Container>;
+  // if (loading) return <Container>Loading...</Container>;
 
   return (
     <Container>
       <div className="flex flex-col gap-8 md:flex-row">
         <div className="card md:w-[342px] w-full bg-base-100 shadow-xl flex-2">
           <img
-            className="w-full"
-            src={`${process.env.REACT_APP_IMAGE_URL}/${movieDetail.poster_path}`}
+            className="w-full h-full bg-contain"
+            src={`${process.env.REACT_APP_IMAGE_URL}/${image}`}
             alt={movieDetail.original_title}
           />
         </div>

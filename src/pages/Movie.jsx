@@ -19,7 +19,7 @@ function Movie() {
     getPopularMovie();
   }, []);
 
-  if (loading) return <Container>Loading</Container>;
+  if (loading) return <Container>Loading...</Container>;
 
   return (
     <Container>
